@@ -28,22 +28,4 @@ This repository contains the code and reports for projects completed as part of 
 
 12. **Machine Learning for Higgs Boson Classification**: Final project involving the use of machine learning techniques for classifying Higgs boson data.
 
-## Benefits of Using GitHub
-
-Uploading these projects to GitHub provides several benefits:
-
-- **Version Control**: Track changes to your code and documents over time.
-
-- **Collaboration**: Easily share your work with others and collaborate on projects.
-
-- **Portfolio**: Showcase your skills and projects to potential employers or collaborators.
-
-- **Backup**: Keep your work safe and accessible from anywhere.
-
-## Getting Started
-
-To get started with this repository:
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/mathematical-physics-practicum.git
+The reports are written in Slovenian as part of my university class, I will translate as many of them as I can.
