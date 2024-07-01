@@ -1,0 +1,86 @@
+// Uporaba complex tipov v standardnem C++
+// ===========================================================================
+
+#include <complex>
+
+// Deklaracije in inicializacije spremenljivk in nizov:
+
+double Re_a, Im_a, Re_b, Im_b;
+complex<double> a, b, c;
+complex<double> *Psi = new complex<double>[N+1];  
+
+a = complex<double>(Re_a, Im_a); // a = Re_a + i*Im_a
+b = complex<double>(Re_b, Im_b);
+
+// osnovne operacije: vse v kompleksnem smislu!
+
+c = a + b;
+c = exp(a + b);
+c = conj(a) / b;
+c = abs(a);
+
+// prepis rutince tridag (NR) v complex:
+
+void
+tridag(complex<double> a[], complex<double> b[], complex<double> c[],
+       complex<double> r[], complex<double> u[], int n) {
+  int j;
+  complex<double> bet;
+  complex<double> *gam = new complex<double>[n];
+  
+  //if (b[0] == 0.0) cerr << "Error 1 in tridag" << endl;
+  u[0] = r[0] / (bet = b[0]);
+  for (j = 1; j <= n-1;j++) {
+    gam[j] = c[j-1] / bet;
+    bet = b[j]-a[j]*gam[j];
+    //if (bet == 0.0) cerr << "Error 2 in tridag" << endl;
+    u[j] = (r[j]-a[j]*u[j-1]) / bet;
+  }
+  for (j = n-2; j >= 0; j--) {
+    u[j] -= gam[j+1]*u[j+1];
+  }
+  delete [] gam;
+}
+
+
+// Uporaba complex tipov za uporabo s knjiznicami GSL
+// ===========================================================================
+
+#include "gsl/gsl_complex.h"
+#include "gsl/gsl_complex_math.h"
+#include "gsl/gsl_linalg.h"
+
+// Deklaracije in inicializacije:
+
+gsl_complex a;
+a = gsl_complex_rect(Re_a, Im_a);
+
+gsl_vector_complex *vec;
+vec = gsl_vector_complex_alloc(N+1);
+for (i = 0; i < N+1; i++) {
+  VAL = ... ;
+  gsl_vector_complex_set(vec, i, VAL); // nasprotje: gsl_vector_complex_get
+}
+
+gsl_matrix_complex *A;
+A = gsl_matrix_complex_alloc(N+1, N+1);
+for (i = 0; i < N+1; i++) {
+  for (j = 0; j < N+1; j++) {
+    VAL = ... ;
+    gsl_matrix_complex_set(A, i, j, VAL);
+  }
+}
+
+// Resevanje linearnega sistema (A*x = b) z dekompozicijo LU:
+
+int signum;
+gsl_permutation *p;
+p = gsl_permutation_alloc(N+1);
+gsl_vector_complex *b, *x;
+b = gsl_vector_complex_alloc(N+1);           // desna stran, 'b'
+x = gsl_vector_complex_alloc(N+1);           // resitev, 'x'
+                                             // matrika A: glej zgoraj
+
+gsl_linalg_complex_LU_decomp(A, p, &signum); // dekompozicija
+gsl_linalg_complex_LU_solve(A, p, b, x);     // resitev
+
