@@ -30,3 +30,5 @@ This repository contains the code and reports for projects completed as part of 
 
 The reports (filenames: Dimitrije_Pešić_##.pdf) are written in Slovenian as part of my university class, I will translate as many of them as I can. The instructions for what the project required of us is found in files named mp##.pdf. Code named main##.py is my own and some other files are my own, other files are open source. 
 The naming convention and best practices are ignored in many examples as the looming deadlines and all nighters did not allow time for consideration of such details. 
+
+The projects were done on a weekly / biweekly timeline with many exams interspersed in between. During the work I often utilized python's mutlithreading as due to overnight deadlines time did not permit long calculations but needed a fast break fix test loop. 
