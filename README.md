@@ -28,4 +28,5 @@ This repository contains the code and reports for projects completed as part of 
 
 12. **Machine Learning for Higgs Boson Classification**: Final project involving the use of machine learning techniques for classifying Higgs boson data.
 
-The reports are written in Slovenian as part of my university class, I will translate as many of them as I can.
+The reports are written in Slovenian as part of my university class, I will translate as many of them as I can. Code named main##.py is my own and some other files are my own, other files are open source. 
+The naming convention and best practices are ignored in many examples as the looming deadlines and all nighters did not allow time for consideration of such details. 
