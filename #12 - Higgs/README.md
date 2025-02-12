@@ -20,10 +20,9 @@ This project explores machine learning techniques for distinguishing Higgs boson
 - NumPy, Pandas, Scikit-learn, Matplotlib
 
 ## License
-
 The contents of the repository are licensed under a [MIT License][MIT].
 
-[![MIT 4.0][MIT-shield]][MIT-sa] 
+[![MIT License][MIT-shield]][MIT]
 
-[MIT]: [http://creativecommons.org/licenses/by-nc-sa/4.0/](https://opensource.org/license/mit)
-[MIT-shield]: [https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg](https://img.shields.io/badge/license-MIT-blue)
+[MIT]: https://opensource.org/license/mit
+[MIT-shield]: https://img.shields.io/badge/license-MIT-blue.svg
